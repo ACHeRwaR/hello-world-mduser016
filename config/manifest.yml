@@ -1,0 +1,5 @@
+---
+applications:
+- name: hello-world-mduser016
+  env:
+    APP_MESSAGE: World
