@@ -27,47 +27,39 @@ You can modify the default message "World" using an application property of `app
 java -jar target/hello-world-mduser016-0.0.1-SNAPSHOT.jar --app.message=Test
 ```
 
-### Pushing to Cloud Foundry
+### Deploying to TAP
 
-You can deploy and use the `config/manifest.yml` file to set the initial message:
+If you make modifications to the source and push to your own Git repository, then you can update the `spec.source.git` information in the `config/workload.yaml` file.
 
-```bash
-./mvnw package  
-cf push hello-world-mduser016 -p target/hello-world-mduser016-0.0.1-SNAPSHOT.jar -f config/manifest.yml --random-route
-```
-
-When deploying without the `manifest.yml` you can use the following commands:
+You can deploy and use the `config/workload.yaml` file to set the initial message:
 
 ```bash
-./mvnw package  
-cf push hello-world-mduser016 -p target/hello-world-mduser016-0.0.1-SNAPSHOT.jar --random-route
+tanzu apps workload apply -f config/workload.yaml
 ```
 
-Then, when you want to update the message you can set the env var `APP_MESSAGE` using:
+If you would like deploy the code from tyour local working directory you can use the following command:
 
-```
-cf set-env hello-world-mduser016 APP_MESSAGE 'Cloud Foundry'
-cf restage hello-world-mduser016
-```
-
-### Accessing the deployed app
-
-Determine the route for the app by running:
-
-```
-cf app hello-world-mduser016
+```bash
+tanzu apps workload create hello-world-mduser016 -f config/workload.yaml \
+  --local-path . \
+  --source-image <REPOSITORY-PREFIX>/hello-world-mduser016-source \
+  --type web
 ```
 
-Then, use `curl` or some other utility to access the route:
+## Accessing the app deployed to your cluster
+
+Determine the URL to use for the accessing the app by running:
 
 ```
-curl <route-for-hello-world-mduser016>
+tanzu apps workload get hello-world-mduser016
 ```
 
-### Deleting the Cloud Foundy app
+To access the deployed app use the URL shown under "Workload Knative Services".
 
-You can delete the running app using:
+Then, use `curl` or some other utility to access the URL:
 
 ```
-cf delete hello-world-mduser016
+curl <URL>
 ```
+
+This depends on the TAP installation having DNS configured for the Knative ingress.

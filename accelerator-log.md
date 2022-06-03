@@ -3,8 +3,8 @@
 ## Options
 ```json
 {
-  "deploymentType" : "manifest",
-  "message" : "World",
+  "deploymentType" : "workload",
+  "message" : "Hello World!",
   "projectName" : "hello-world-mduser016"
 }
 ```
@@ -97,44 +97,74 @@
 ┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'none') evaluated to false
 ┃ ┃ ┃ ┗ null ()
 ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[3] (Combo)
-┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'manifest') evaluated to true
-┃ ┃ ┃ ┃  Info Combo running as Chain(Include, Chain(chain))
-┃ ┃ ┃ ┃ engine.transformations[0].merge.transformations[0].sources[3].<combo> (Chain)
-┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'manifest') evaluated to true
-┃ ┃ ┃ ┃  Info Running Chain(Include, Chain)
-┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[3].<combo>.transformations[0] (Include)
-┃ ┃ ┃ ┃ ┃  Info Will include [cloudfoundry/manifest.yml]
-┃ ┃ ┃ ┃ ┃ Debug .github/workflows/code-scan.yml didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug .gitignore didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.jar didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.properties didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug LICENSE didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug README.md didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/DEPLOYING.md didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/manifest.yml matched [cloudfoundry/manifest.yml] -> included
-┃ ┃ ┃ ┃ ┃ Debug grype.yaml didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug mvnw didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug mvnw.cmd didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug pom.xml didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldApplication.java didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldController.java didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug src/main/resources/application.properties didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/hello/HelloWorldApplicationTests.java didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug tap/DEPLOYING.md didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug tap/catalog-info.yaml didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┗ Debug tap/workload.yaml didn't match [cloudfoundry/manifest.yml] -> excluded
-┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[3].<combo>.transformations[1] (Chain)
-┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, RewritePath)
-┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[3].<combo>.transformations[1].transformations[0] (ReplaceText)
-┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [hello-world->hello-world-mduser01...(truncated), World->World]
-┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[3].<combo>.transformations[1].transformations[1] (RewritePath)
-┃ ┃ ┃ ┗ ┗ ┗ Debug Path 'cloudfoundry/manifest.yml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yml, folder=cloudfoundry/, filename=manifest.yml, g0=cloudfoundry/manifest.yml, g1=cloudfoundry/, g2=manifest.yml, g3=manifest.yml, g4=.yml} and was rewritten to 'config/manifest.yml'
+┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'manifest') evaluated to false
+┃ ┃ ┃ ┗ null ()
 ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[4] (Combo)
-┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to false
-┃ ┃ ┃ ┗ null ()
+┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to true
+┃ ┃ ┃ ┃  Info Combo running as Chain(Include, Chain(chain))
+┃ ┃ ┃ ┃ engine.transformations[0].merge.transformations[0].sources[4].<combo> (Chain)
+┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to true
+┃ ┃ ┃ ┃  Info Running Chain(Include, Chain)
+┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[4].<combo>.transformations[0] (Include)
+┃ ┃ ┃ ┃ ┃  Info Will include [tap/catalog-info.yaml]
+┃ ┃ ┃ ┃ ┃ Debug .github/workflows/code-scan.yml didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug .gitignore didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.jar didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.properties didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug LICENSE didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug README.md didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/DEPLOYING.md didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/manifest.yml didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug grype.yaml didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug mvnw didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug mvnw.cmd didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug pom.xml didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldApplication.java didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldController.java didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/main/resources/application.properties didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/hello/HelloWorldApplicationTests.java didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug tap/DEPLOYING.md didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug tap/catalog-info.yaml matched [tap/catalog-info.yaml] -> included
+┃ ┃ ┃ ┃ ┗ Debug tap/workload.yaml didn't match [tap/catalog-info.yaml] -> excluded
+┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[4].<combo>.transformations[1] (Chain)
+┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, RewritePath)
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[4].<combo>.transformations[1].transformations[0] (ReplaceText)
+┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [hello-world->hello-world-mduser01...(truncated)]
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[4].<combo>.transformations[1].transformations[1] (RewritePath)
+┃ ┃ ┃ ┗ ┗ ┗ Debug Path 'tap/catalog-info.yaml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yaml, folder=tap/, filename=catalog-info.yaml, g0=tap/catalog-info.yaml, g1=tap/, g2=catalog-info.yaml, g3=catalog-info.yaml, g4=.yaml} and was rewritten to 'catalog/catalog-info.yaml'
 ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[5] (Combo)
-┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to false
-┃ ┃ ┃ ┗ null ()
+┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to true
+┃ ┃ ┃ ┃  Info Combo running as Chain(Include, Chain(chain))
+┃ ┃ ┃ ┃ engine.transformations[0].merge.transformations[0].sources[5].<combo> (Chain)
+┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to true
+┃ ┃ ┃ ┃  Info Running Chain(Include, Chain)
+┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[5].<combo>.transformations[0] (Include)
+┃ ┃ ┃ ┃ ┃  Info Will include [tap/workload.yaml]
+┃ ┃ ┃ ┃ ┃ Debug .github/workflows/code-scan.yml didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug .gitignore didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.jar didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.properties didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug LICENSE didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug README.md didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/DEPLOYING.md didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/manifest.yml didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug grype.yaml didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug mvnw didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug mvnw.cmd didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug pom.xml didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldApplication.java didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldController.java didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/main/resources/application.properties didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/hello/HelloWorldApplicationTests.java didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug tap/DEPLOYING.md didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug tap/catalog-info.yaml didn't match [tap/workload.yaml] -> excluded
+┃ ┃ ┃ ┃ ┗ Debug tap/workload.yaml matched [tap/workload.yaml] -> included
+┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[5].<combo>.transformations[1] (Chain)
+┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, RewritePath)
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[5].<combo>.transformations[1].transformations[0] (ReplaceText)
+┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [hello-world->hello-world-mduser01...(truncated), World->Hello World!]
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].merge.transformations[0].sources[5].<combo>.transformations[1].transformations[1] (RewritePath)
+┃ ┃ ┃ ┗ ┗ ┗ Debug Path 'tap/workload.yaml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yaml, folder=tap/, filename=workload.yaml, g0=tap/workload.yaml, g1=tap/, g2=workload.yaml, g3=workload.yaml, g4=.yaml} and was rewritten to 'config/workload.yaml'
 ┃ ┃ ┃ ┏ README (Combo)
 ┃ ┃ ┃ ┃  Info Combo running as Chain(Merge(merge), UniquePath(Append))
 ┃ ┃ ┃ ┃ README.merge (Chain)
@@ -171,41 +201,41 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[0].<combo>.transformations[1].transformations[0] (ReplaceText)
 ┃ ┃ ┃ ┃ ┃ ┗ ┗ ┗  Info Will replace [hello-world->hello-world-mduser01...(truncated)]
 ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[1] (Combo)
-┃ ┃ ┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'manifest') evaluated to true
-┃ ┃ ┃ ┃ ┃ ┃  Info Combo running as Chain(Include, Chain(chain))
-┃ ┃ ┃ ┃ ┃ ┃ README.merge.transformations[0].sources[1].<combo> (Chain)
-┃ ┃ ┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'manifest') evaluated to true
-┃ ┃ ┃ ┃ ┃ ┃  Info Running Chain(Include, Chain)
-┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[1].<combo>.transformations[0] (Include)
-┃ ┃ ┃ ┃ ┃ ┃ ┃  Info Will include [cloudfoundry/DEPLOYING.md]
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .github/workflows/code-scan.yml didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .gitignore didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.jar didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.properties didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug LICENSE didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug README.md didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/DEPLOYING.md matched [cloudfoundry/DEPLOYING.md] -> included
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/manifest.yml didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug grype.yaml didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug mvnw didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug mvnw.cmd didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug pom.xml didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldApplication.java didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldController.java didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/application.properties didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/hello/HelloWorldApplicationTests.java didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug tap/DEPLOYING.md didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug tap/catalog-info.yaml didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┗ Debug tap/workload.yaml didn't match [cloudfoundry/DEPLOYING.md] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[1].<combo>.transformations[1] (Chain)
-┃ ┃ ┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, RewritePath)
-┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[1].<combo>.transformations[1].transformations[0] (ReplaceText)
-┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [hello-world->hello-world-mduser01...(truncated)]
-┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[1].<combo>.transformations[1].transformations[1] (RewritePath)
-┃ ┃ ┃ ┃ ┃ ┗ ┗ ┗ Debug Path 'cloudfoundry/DEPLOYING.md' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.md, folder=cloudfoundry/, filename=DEPLOYING.md, g0=cloudfoundry/DEPLOYING.md, g1=cloudfoundry/, g2=DEPLOYING.md, g3=DEPLOYING.md, g4=.md} and was rewritten to 'README.md'
+┃ ┃ ┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'manifest') evaluated to false
+┃ ┃ ┃ ┃ ┃ ┗ null ()
 ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[2] (Combo)
-┃ ┃ ┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to false
-┃ ┃ ┃ ┃ ┗ ┗ null ()
+┃ ┃ ┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to true
+┃ ┃ ┃ ┃ ┃ ┃  Info Combo running as Chain(Include, Chain(chain))
+┃ ┃ ┃ ┃ ┃ ┃ README.merge.transformations[0].sources[2].<combo> (Chain)
+┃ ┃ ┃ ┃ ┃ ┃  Info Condition (#deploymentType == 'workload') evaluated to true
+┃ ┃ ┃ ┃ ┃ ┃  Info Running Chain(Include, Chain)
+┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[2].<combo>.transformations[0] (Include)
+┃ ┃ ┃ ┃ ┃ ┃ ┃  Info Will include [tap/DEPLOYING.md]
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .github/workflows/code-scan.yml didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .gitignore didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.jar didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .mvn/wrapper/maven-wrapper.properties didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug LICENSE didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug README.md didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/DEPLOYING.md didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug cloudfoundry/manifest.yml didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug grype.yaml didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug mvnw didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug mvnw.cmd didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug pom.xml didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldApplication.java didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/hello/HelloWorldController.java didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/application.properties didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/hello/HelloWorldApplicationTests.java didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug tap/DEPLOYING.md matched [tap/DEPLOYING.md] -> included
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug tap/catalog-info.yaml didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┗ Debug tap/workload.yaml didn't match [tap/DEPLOYING.md] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[2].<combo>.transformations[1] (Chain)
+┃ ┃ ┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, RewritePath)
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[2].<combo>.transformations[1].transformations[0] (ReplaceText)
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [hello-world->hello-world-mduser01...(truncated)]
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ README.merge.transformations[0].sources[2].<combo>.transformations[1].transformations[1] (RewritePath)
+┃ ┃ ┃ ┃ ┗ ┗ ┗ ┗ Debug Path 'tap/DEPLOYING.md' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.md, folder=tap/, filename=DEPLOYING.md, g0=tap/DEPLOYING.md, g1=tap/, g2=DEPLOYING.md, g3=DEPLOYING.md, g4=.md} and was rewritten to 'README.md'
 ┃ ┃ ┃ ┃ ┏ README.merge.transformations[1] (UniquePath)
 ┃ ┃ ┗ ┗ ┗ Debug Multiple representations for path 'README.md', will concatenate them together
 ┃ ┗ ╺ engine.transformations[0].merge.transformations[1] (UniquePath)
