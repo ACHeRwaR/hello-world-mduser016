@@ -15,6 +15,6 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/sample-accelerators/hello-world-mduser016
+      url: https://github.com/ACHeRwaR/hello-world-mduser016
       ref:
         branch: main
